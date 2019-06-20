@@ -7,9 +7,15 @@
   },
   "license": "MIT",
   "author": {
-    "name": "Dave Li",
-    "email": "dave.li@schibsted.com"
+    "name": "Kenenth Lykkås",
+    "email": "kenneth.lykkas@schibsted.com"
   },
+  "contributors": [
+    {
+      "name": "Dave Li",
+      "email": "dave.li@schibsted.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/innsyn/api.git"
