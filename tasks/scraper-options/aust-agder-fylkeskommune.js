@@ -49,9 +49,6 @@ module.exports = {
             path: 'JournalDato',
             type: {
               name: 'date',
-              config: {
-                format: 'yyyy-MM-dd',
-              },
             },
           },
           {
@@ -59,9 +56,6 @@ module.exports = {
             path: 'DokumentDato',
             type: {
               name: 'date',
-              config: {
-                format: 'yyyy-MM-dd',
-              },
             },
           },
           {
