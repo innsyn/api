@@ -9,7 +9,7 @@ const getSourceById = require('./../src/helpers/queries').getSourceById;
 const saveJournal = require('./../src/helpers/journalSaver').save;
 const setDateImportedForFile = require('./../src/helpers/queries')
   .setDateImportedForFile;
-const exec = require('child_process').exec;
+const { EXTRACTION_ERROR_STATUS } = require('../apps/common/constants');
 
 const {
   knex,
@@ -22,9 +22,8 @@ const fs = require('fs');
 
 const logRed = require('./../src/helpers/logWithColor').logRed;
 const logYellow = require('./../src/helpers/logWithColor').logYellow;
-const logDim = require('./../src/helpers/logWithColor').logDim;
 
-const parseFile = require('../apps/common/helpers/pdf');
+const { parseFile } = require('../apps/common/helpers/pdf');
 
 sync()
   .then(function() {
