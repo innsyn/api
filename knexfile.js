@@ -5,8 +5,8 @@ module.exports = {
     client: 'postgresql',
     connection: config.get('db.connection'),
     pool: {
-      min: 2,
-      max: 10,
+      min: 10,
+      max: 20,
     },
     migrations: {
       tableName: 'knex_migrations',
@@ -17,8 +17,8 @@ module.exports = {
     client: 'postgresql',
     connection: config.get('db.connection'),
     pool: {
-      min: 2,
-      max: 10,
+      min: 10,
+      max: 20,
     },
     migrations: {
       tableName: 'knex_migrations',
