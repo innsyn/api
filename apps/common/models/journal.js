@@ -39,6 +39,8 @@ class JournalModel extends BaseModel {
     if (caseNumber) {
       query.where('caseNumber', caseNumber);
     }
+
+    query.orderBy('document_date', 'desc');
   }
 }
 
