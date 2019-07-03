@@ -11,6 +11,12 @@ class JournalModel extends BaseModel {
     return 'id';
   }
 
+  static buildQueryColumns(query, state) {
+    if (state.select && state.select.id) {
+      query.select('id');
+    }
+  }
+
   static buildQueryWhere(query, state) {
     const { project_id, source_id, from, to, term, caseNumber } = state;
 

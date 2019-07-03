@@ -5,7 +5,9 @@ const { Model } = require('objection');
 
 class BaseModel extends Model {
   static buildQueryFrom(query, state = {}) {}
-  static buildQueryColumns(query, state = {}) {}
+  static buildQueryColumns(query, state = {}) {
+    query.select('*');
+  }
   static buildQueryJoins(query, state = {}) {}
   static buildQueryWhere(query, state = {}) {
     if (state.id) {
@@ -36,7 +38,7 @@ class BaseModel extends Model {
   }
 
   static async fetch(state = {}) {
-    const query = this.query().select('*');
+    const query = this.query();
 
     this.buildQueryFrom(query, state);
     this.buildQueryColumns(query, state);

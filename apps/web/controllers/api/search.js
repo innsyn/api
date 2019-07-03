@@ -1,7 +1,7 @@
 /* Copyright 2019 Schibsted */
 
 const Joi = require('@hapi/joi');
-const JournalModel = require('../../../common/models/journal');
+const SearchModel = require('../../../common/models/search');
 
 class SearchController {
   static async browse(req, res, next) {
@@ -34,7 +34,7 @@ class SearchController {
       page = 1,
     } = value;
 
-    const data = await JournalModel.fetch({
+    const data = await SearchModel.fetch({
       project_id: projectId,
       source_id: sourceId,
       from,
