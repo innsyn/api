@@ -2,7 +2,7 @@
 
 const Joi = require('@hapi/joi');
 const Counter = require('../../../common/models/counter');
-const JournalModel = require('../../../common/models/journal');
+const SearchModel = require('../../../common/models/search');
 
 const isEmptyQuery = function(values) {
   return (
@@ -79,7 +79,7 @@ class CountController {
 
         result = data.reduce((acc, { count }) => acc + count, 0);
       } else {
-        result = await JournalModel.count({
+        result = await SearchModel.count({
           project_id: projectId,
           source_id: sourceId,
           from,
