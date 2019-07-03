@@ -34,18 +34,23 @@ class SearchController {
       page = 1,
     } = value;
 
-    const data = await SearchModel.fetch({
-      project_id: projectId,
-      source_id: sourceId,
-      from,
-      to,
-      term,
-      caseNumber,
-      limit,
-      offset: (page - 1) * limit,
-    });
+    try {
+      const data = await SearchModel.fetch({
+        project_id: projectId,
+        source_id: sourceId,
+        from,
+        to,
+        term,
+        caseNumber,
+        limit,
+        offset: (page - 1) * limit,
+      });
 
-    res.send(data);
+      res.send(data);
+    } catch ({ status, error }) {
+      res.status(status);
+      res.send(error);
+    }
   }
 }
 

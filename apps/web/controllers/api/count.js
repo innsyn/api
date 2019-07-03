@@ -65,8 +65,6 @@ class CountController {
     const { projectId, sourceId, from, to, term, caseNumber } = searchParams;
 
     try {
-      let result = [];
-
       if (
         isEmptyQuery(searchParams) ||
         isOnlyProjectQuery(searchParams) ||
@@ -77,19 +75,24 @@ class CountController {
           source_id: sourceId,
         });
 
-        result = data.reduce((acc, { count }) => acc + count, 0);
+        res.json(data.reduce((acc, { count }) => acc + count, 0));
       } else {
-        result = await SearchModel.count({
-          project_id: projectId,
-          source_id: sourceId,
-          from,
-          to,
-          term,
-          caseNumber,
-        });
+        try {
+          res.json(
+            await SearchModel.count({
+              project_id: projectId,
+              source_id: sourceId,
+              from,
+              to,
+              term,
+              caseNumber,
+            }),
+          );
+        } catch ({ status, error }) {
+          res.status(status);
+          res.send(error);
+        }
       }
-
-      return res.json(result);
     } catch (err) {
       return res.status(404).json({ error: 'count', content: err });
     }
