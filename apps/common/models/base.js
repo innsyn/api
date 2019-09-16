@@ -58,10 +58,10 @@ class BaseModel extends Model {
     this.buildQueryWhere(query, state);
     this.buildQueryGroup(query, state);
 
-    const { count } = await query
+    const { count } = (await query
       .clone()
       .select(BaseModel.raw('count(*) OVER()'))
-      .first();
+      .first()) || { count: '0' };
 
     return parseInt(count, 10);
   }
