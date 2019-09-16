@@ -24,8 +24,8 @@ class SearchController {
     if (error) next(new Error(error));
 
     const {
-      project_id: projectId,
-      source_id: sourceId,
+      projectId,
+      sourceId,
       from,
       to,
       term,
