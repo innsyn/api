@@ -25,7 +25,7 @@ const config = convict({
     connection: {
       doc: '',
       format: 'String',
-      default: 'postgres://postgres:postgres@localhost:5432/app?ssl=true',
+      default: 'postgres://postgres:postgres@localhost:5432/innsyn',
       env: 'DATABASE_URL',
     },
     schema: {

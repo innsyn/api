@@ -1,0 +1,8 @@
+{
+    "db": {
+        "connection": "postgres://postgres:postgres@localhost:5432/innsyn"
+    },
+    "puppeteer": {
+        "executable_path": "/Applications/Chromium.app/Contents/MacOS/Chromium"
+    }
+}
