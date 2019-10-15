@@ -41,7 +41,7 @@ class SearchController {
         from,
         to,
         term,
-        caseNumber,
+        case_number: caseNumber,
         limit,
         offset: (page - 1) * limit,
       });

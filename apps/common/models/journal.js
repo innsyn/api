@@ -18,7 +18,7 @@ class JournalModel extends BaseModel {
   }
 
   static buildQueryWhere(query, state) {
-    const { project_id, source_id, from, to, term, caseNumber } = state;
+    const { project_id, source_id, from, to, term, case_number } = state;
 
     if (project_id) {
       query.where('project_id', project_id);
@@ -42,8 +42,8 @@ class JournalModel extends BaseModel {
       ]);
     }
 
-    if (caseNumber) {
-      query.where('caseNumber', caseNumber);
+    if (case_number) {
+      query.where('case_number', case_number);
     }
 
     query.orderBy('document_date', 'desc');
