@@ -60,7 +60,8 @@ class BaseModel extends Model {
 
     const { count } = (await query
       .clone()
-      .select(BaseModel.raw('count(*) OVER()'))
+      .clearOrder()
+      .count()
       .first()) || { count: '0' };
 
     return parseInt(count, 10);
