@@ -19,7 +19,7 @@ class SearchController {
       })
       .unknown(true);
 
-    const { error, value } = Joi.validate(req.query, schema);
+    const { error, value } = schema.validate(req.query);
 
     if (error) next(new Error(error));
 

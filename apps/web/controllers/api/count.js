@@ -58,7 +58,7 @@ class CountController {
       })
       .unknown(true);
 
-    const { error, value: searchParams } = Joi.validate(req.query, schema);
+    const { error, value: searchParams } = schema.validate(req.query);
 
     if (error) next(new Error(error));
 
