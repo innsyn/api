@@ -35,12 +35,16 @@ module.exports = {
         {
           name: 'recordedDate',
           path: '.data-column div dl:nth-child(1) dd',
-          type: 'date',
+          type: {
+            name: 'date',
+          },
         },
         {
           name: 'documentDate',
           path: '.journal-details dl:first-child dd',
-          type: 'date',
+          type: {
+            name: 'date',
+          },
         },
         {
           name: 'caseTitle',
