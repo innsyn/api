@@ -24,8 +24,8 @@ Before being able to run the app, for the first time, you will need to setup the
 After this you can run the database migrations and seed the database by running:
 
 ```
-node ./node_modules/bin/knex migrate:latest
-node ./node_modules/bin/knex seed:run
+node ./node_modules/.bin/knex migrate:latest
+node ./node_modules/.bin/knex seed:run
 ```
 
 **_IMPORTANT_**: Whenever you seed the database you will **_DESTORY_** all data in the database.
