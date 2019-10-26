@@ -51,3 +51,15 @@ node ./tasks/syncFromWeb.js aust-agder-fylkeskommune
 - Chromium
 - PostgreSQL
 - Node.js 10.\*
+
+### FAQ
+
+**Error: Chromium revision is not downloaded. Run "npm install" or "yarn install"**
+
+You need to let the project know about your Chromium (or Chrome) install, e.g. by setting the CHROME_BIN varible:
+
+```
+export CHROME_BIN="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+```
+
+
