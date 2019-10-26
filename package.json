@@ -46,7 +46,7 @@
     "objection": "^1.6.11",
     "pg": "^7.12.1",
     "pg-connection-string": "^2.1.0",
-    "puppeteer-core": "^1.20.0",
+    "puppeteer-core": "^2.0.0",
     "query-string": "^6.8.3",
     "request": "^2.88.0",
     "s3": "4.4.0"
