@@ -1,5 +1,5 @@
 /* Copyright 2019 Schibsted */
-const config = require('../../config.js');
+const config = require('../../config');
 
 module.exports = {
   get: function() {
@@ -22,6 +22,7 @@ module.exports = {
         host: config.get('email.incoming.host'),
         port: config.get('email.incoming.port'),
         tls: config.get('email.incoming.secure'),
+        tlsOptions: { servername: config.get('email.incoming.host') },
       },
       filter: {
         from: '',

@@ -4,6 +4,10 @@ const fetch = require('node-fetch');
 const fs = require('fs');
 
 const downloadFileToPath = function(url, destPath) {
+  if (!url.startsWith('http')) {
+    return Promise.resolve(url);
+  }
+
   return fetch(url)
     .then(res =>
       res.ok

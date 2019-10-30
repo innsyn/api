@@ -1,7 +1,7 @@
 /* Copyright 2019 Schibsted */
 
 var _ = require('lodash');
-var baseConfig = require('./base-email-config');
+var baseConfig = require('./base-email');
 
 module.exports = {
   get: function() {

@@ -127,8 +127,8 @@ function listFilesInFolder(options) {
 }
 
 function getS3() {
-  const awsAccessKeyId = process.env.S3_DOCUMENTS_ACCESSKEYID;
-  const awsSecretAccessKey = process.env.S3_DOCUMENTS_SECRETACCESSKEY;
+  const awsAccessKeyId = config.get('aws.s3.access_key_id');
+  const awsSecretAccessKey = config.get('aws.s3.secret_access_key');
   AWS.config.credentials = new AWS.Credentials(
     awsAccessKeyId,
     awsSecretAccessKey,
