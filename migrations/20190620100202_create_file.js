@@ -15,7 +15,10 @@ exports.up = function(knex, Promise) {
     table.string('status', 20).notNull();
     table.string('s3_url', 300);
     table.string('s3_key', 300);
-    table.integer('retries_remaining').notNull();
+    table
+      .integer('retries_remaining')
+      .notNull()
+      .defaultTo(1);
   });
 };
 
