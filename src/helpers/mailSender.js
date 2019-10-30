@@ -1,6 +1,6 @@
 /* Copyright 2019 Schibsted */
 
-const config = require('../../config.js');
+const config = require('../../config');
 const nodemailer = require('nodemailer');
 
 module.exports = { sendMailAsText };

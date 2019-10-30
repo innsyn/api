@@ -1,6 +1,6 @@
 /* Copyright 2019 Schibsted */
 
-const config = require('../../config.js');
+const config = require('../../config');
 const AWS = require('aws-sdk');
 const fetch = require('node-fetch');
 const fs = require('fs');

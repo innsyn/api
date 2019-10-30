@@ -11,7 +11,7 @@ let dateFormatYYYMMDDhhmm = require('../src/helpers/dateFunctions')
   .dateFormatYYYMMDDhhmm;
 let Bottleneck = require('bottleneck');
 const puppeteer = require('puppeteer-core');
-const config = require('../config.js');
+const config = require('../config');
 
 module.exports = { scrape, getUrlsFromOptions };
 

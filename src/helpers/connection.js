@@ -1,7 +1,7 @@
 /* Copyright 2019 Schibsted */
 
 const massive = require('massive');
-const config = require('../../config.js');
+const config = require('../../config');
 
 module.exports = { getConnection, getConnectionAsPromise };
 
