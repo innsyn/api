@@ -17,7 +17,7 @@ module.exports = {
     const helper = require('./../helpers/documentParserHelper');
 
     const sanitizeDocument = function(raw) {
-      let doc = raw.replace(/.*(POSTLISTE[^]+?)Lnr:/g, 'Lnr:');
+      let doc = raw.replace(/.*(POSTLISTE[^]+?)(?=Saksnr:)/g, '');
 
       // remove empty lines
       doc = doc.replace(/^\s*[\r\n]/gm, '');
@@ -26,7 +26,7 @@ module.exports = {
     };
 
     const getCaseNumber = function(entity) {
-      const regexList = [/Saksnr:([^]+?(?=Dok\.type:))/];
+      const regexList = [/Saksnr:\s*(\d+\/\d+-\d+)/];
       return helper.getValueFromString(entity, regexList).trim();
     };
 
@@ -133,6 +133,7 @@ module.exports = {
     // END: Helpers
 
     const cases = sanitizeDocument(raw).split('Lnr:');
+
     cases.shift(); // Removes first element from array as this contains everything before the matching seperator.
 
     return {
