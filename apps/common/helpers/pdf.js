@@ -8,9 +8,13 @@ const parseFile = async function(file) {
   try {
     const outputFilename = `./${uuid()}`;
 
-    await exec(`pdftotext -layout -enc UTF-8 ${file} ${outputFilename}`);
+    await exec(`pdftotext -simple -enc UTF-8 ${file} ${outputFilename}`);
 
-    return fs.promises.readFile(outputFilename, { encoding: 'UTF-8' });
+    const data = fs.promises.readFile(outputFilename, { encoding: 'UTF-8' });
+
+    await fs.promises.unlink(outputFilename);
+
+    return data;
   } catch (error) {
     return EXTRACTION_ERROR_STATUS;
   }
