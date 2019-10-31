@@ -48,6 +48,7 @@ async function sync() {
         'in',
         File.query()
           .select('id')
+          .where('status', '=', 'New')
           .where('retries_remaining', '>', 0)
           .orderByRaw('registered_date FOR UPDATE SKIP LOCKED')
           .limit(10),
