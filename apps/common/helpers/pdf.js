@@ -20,7 +20,9 @@ const parseFile = async function(file) {
 
     await exec(shellescape(args));
 
-    const data = fs.promises.readFile(outputFilename, { encoding: 'UTF-8' });
+    const data = await fs.promises.readFile(outputFilename, {
+      encoding: 'UTF-8',
+    });
 
     await fs.promises.unlink(outputFilename);
 
