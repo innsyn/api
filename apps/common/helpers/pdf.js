@@ -1,3 +1,4 @@
+const shellescape = require('shell-escape');
 const fs = require('fs');
 const util = require('util');
 const uuid = require('uuid/v4');
@@ -8,7 +9,16 @@ const parseFile = async function(file) {
   try {
     const outputFilename = `./${uuid()}`;
 
-    await exec(`pdftotext -simple -enc UTF-8 ${file} ${outputFilename}`);
+    const args = [
+      'pdftotext',
+      '-simple',
+      '-enc',
+      'UTF-8',
+      file,
+      outputFilename,
+    ];
+
+    await exec(shellescape(args));
 
     const data = fs.promises.readFile(outputFilename, { encoding: 'UTF-8' });
 
