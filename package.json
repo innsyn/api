@@ -41,7 +41,7 @@
     "luxon": "^1.19.3",
     "mailparser": "^2.7.1",
     "massive": "^2.7.5",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "nodemailer": "^6.3.1",
     "objection": "^1.6.11",
     "pg": "^7.12.1",
