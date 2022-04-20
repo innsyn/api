@@ -33,7 +33,7 @@
     "cheerio": "^0.22.0",
     "compose-middleware": "^5.0.1",
     "compression": "^1.7.4",
-    "convict": "^5.2.0",
+    "convict": "^6.2.2",
     "express": "^4.17.1",
     "imap": "^0.8.19",
     "knex": "^0.19.5",
